@@ -1,11 +1,13 @@
 package org.example.cifrario.ui;
 
+import org.example.cifrario.app.Cifratore;
+
 import java.util.Scanner;
 
 
 public class SchermataPrincipale {
     Scanner scanner = new Scanner(System.in);
-
+    Cifratore cifratore = new Cifratore();
     public void start(){
 
      int choice;
@@ -14,7 +16,7 @@ public class SchermataPrincipale {
          stampascelte();
          choice = scanner.nextInt();
          if (choice == 1) {
-             //Cifrario
+             testoDaCifrare();
          }
          if(choice == 2){
              System.out.println("Uscita...");
@@ -28,6 +30,11 @@ public class SchermataPrincipale {
     public void stampascelte(){
         System.out.println("1) Inserimento testo che si vuole cifrare");
         System.out.println("2) Esci");
+    }
+
+    public void testoDaCifrare(){
+        System.out.println("Inserisci il testo che vuoi cifrare");
+        String testo = scanner.nextLine();
     }
 
 }
