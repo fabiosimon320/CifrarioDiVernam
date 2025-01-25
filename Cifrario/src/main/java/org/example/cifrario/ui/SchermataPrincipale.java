@@ -15,14 +15,18 @@ public class SchermataPrincipale {
      do {
          stampascelte();
          choice = scanner.nextInt();
-         if (choice == 1) {
-             testoDaCifrare();
+         switch (choice){
+             case 1:
+                 testoDaCifrare();
+                 break;
+             case 2:
+                 System.out.println("Uscita...");
+                 break;
+             default:
+                 System.out.println("Valore errato, inserisci un valore valido");
+                 break;
          }
-         if(choice == 2){
-             System.out.println("Uscita...");
-         }else{
-             System.out.println("Valore errato, inserisci un valore valido");
-         }
+
 
      }while (choice != 2);
     }
@@ -33,8 +37,9 @@ public class SchermataPrincipale {
     }
 
     public void testoDaCifrare(){
-        System.out.println("Inserisci il testo che vuoi cifrare");
-        String testo = scanner.nextLine();
+        System.out.println("Inserisci il testo che vuoi cifrare:");
+
+        String testo = scanner.next();
     }
 
 }
