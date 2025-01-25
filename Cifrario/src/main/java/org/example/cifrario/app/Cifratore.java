@@ -1,20 +1,19 @@
 package org.example.cifrario.app;
 
+import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
 public class Cifratore {
 
-    private String testoInchiaro;
     private int dimKey;
-    private byte[] key;
 
     public void cifratura(String testoInchiaro){
 
         this.dimKey = testoInchiaro.length(); //Otteniamo la dimensione della chiave
+        byte[] testoByte = testoInchiaro.getBytes(StandardCharsets.UTF_8); // Trasforma il testo in un array di byte
+        byte[] key = generateKey(testoByte.length);
 
-        key = generateKey();
-        byte[] testoByte = testoInchiaro.getBytes(); // Trasforma il testo in un array di byte
 
         byte[] testoCifratoByte = xorOperation(key, testoByte);  // Esegue l'operatore XOR e lo salva in un testo cifrato
 
@@ -42,10 +41,10 @@ public class Cifratore {
 
     }
 
-    private byte[] generateKey(){
+    private byte[] generateKey(int size){
         SecureRandom secureRandom = new SecureRandom();
-        System.out.println("dimensione" + this.dimKey);
-        byte[] key = new byte[this.dimKey];
+
+        byte[] key = new byte[size];
         secureRandom.nextBytes(key);
         return key;
     }
