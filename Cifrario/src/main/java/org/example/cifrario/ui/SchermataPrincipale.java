@@ -15,6 +15,7 @@ public class SchermataPrincipale {
      do {
          stampascelte();
          choice = scanner.nextInt();
+         scanner.nextLine();
          switch (choice){
              case 1:
                  testoDaCifrare();
@@ -36,10 +37,13 @@ public class SchermataPrincipale {
         System.out.println("2) Esci");
     }
 
-    public void testoDaCifrare(){
+    public void testoDaCifrare() {
         System.out.println("Inserisci il testo che vuoi cifrare:");
 
-        String testo = scanner.next();
+        String testo = scanner.nextLine();
+
+
+        cifratore.cifratura(testo);
     }
 
 }
