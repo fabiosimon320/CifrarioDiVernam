@@ -1,8 +1,7 @@
-package org.example.cifrario.app;
+package org.esame.cifrario.app;
 
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
-import java.util.Arrays;
 
 public class Cifratore {
 
@@ -44,6 +43,7 @@ public class Cifratore {
                 while (j < testoCifrato.length && (testoCifrato[j] & 0x80) == 0x80) {
                     j++;
                 }
+
                 // Ora, possiamo trattare la sequenza di byte dal punto di inizio fino a j
                 byte[] multibyteChar = new byte[j - i];
                 System.arraycopy(testoCifrato, i, multibyteChar, 0, j - i); //copia dell'array
