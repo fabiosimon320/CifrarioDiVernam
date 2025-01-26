@@ -5,11 +5,20 @@ import java.security.SecureRandom;
 
 public class Cifratore {
 
-    private int dimKey;
+    String testoCifrato;
+    String testoDecifrato;
+
+    public String getTestoCifrato() {
+        return testoCifrato;
+    }
+
+    public String getTestoDecifrato() {
+        return testoDecifrato;
+    }
 
     public void cifratura(String testoInchiaro){
 
-        this.dimKey = testoInchiaro.length(); //Otteniamo la dimensione della chiave
+
         byte[] testoByte = testoInchiaro.getBytes(StandardCharsets.UTF_8); // Trasforma il testo in un array di byte
         byte[] key = generateKey(testoByte.length);
 
@@ -17,20 +26,21 @@ public class Cifratore {
         byte[] testoCifratoByte = xorOperation(key, testoByte);  // Esegue l'operatore XOR e lo salva in un testo cifrato
 
         String testoCifrato = ByteToString(testoCifratoByte); // Si converte il testo cifrato in una stringa in moda che l'utente la possa leggere correttamente
+        this.testoCifrato = testoCifrato;
 
         System.out.println("Testo cifrato: " + testoCifrato);   // Lo stampiamo
 
         testoCifratoByte = xorOperation(key, testoCifratoByte);  // Usando la stessa chiave, con l'operatore XOR, convertiamo il testo cifrato in un testo decifrato
 
-        stampaTestoDecifrato(testoCifratoByte); // Metodo che ci stampa il testo decifrato
+        // Metodo che ci stampa il testo decifrato
+        System.out.println(stampaTestoDecifrato(testoCifratoByte));
 
-
-
+        this.testoDecifrato = stampaTestoDecifrato(testoCifratoByte);
 
 
     }
 
-    private void stampaTestoDecifrato(byte[] testoCifrato) {
+    private String stampaTestoDecifrato(byte[] testoCifrato) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < testoCifrato.length; i++) {
             // I caratteri che sono formato da più byte hanno il valore del primo bit assegnato a 1 quindi è possibile
@@ -56,7 +66,7 @@ public class Cifratore {
                 stringBuilder.append((char) testoCifrato[i]);
             }
         }
-        System.out.println("Testo decifrato: " + stringBuilder);
+        return "Testo decifrato: " + stringBuilder;
     }
 
 
@@ -84,9 +94,8 @@ public class Cifratore {
     private String ByteToString(byte[] testoCifrato){
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < testoCifrato.length; i++) {
+        for (int result : testoCifrato) {
 
-            int result = testoCifrato[i];
             char cifrato = (char) ('a' + ((result % 26 + 26) % 26)); // questo permette di avere valori che vanno da 'a' a 'z' gestendo anche i valori negativi
             sb.append(cifrato);
         }

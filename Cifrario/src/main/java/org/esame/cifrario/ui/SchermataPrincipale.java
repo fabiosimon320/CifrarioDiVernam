@@ -41,6 +41,7 @@ public class SchermataPrincipale {
     }
 
     public void stampascelte(){
+        System.out.println("Scelte:");
         System.out.println("1) Inserimento testo che si vuole cifrare");
         System.out.println("2) Esci");
     }
