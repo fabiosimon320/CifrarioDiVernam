@@ -25,22 +25,21 @@ public class Cifratore {
 
         byte[] testoCifratoByte = xorOperation(key, testoByte);  // Esegue l'operatore XOR e lo salva in un testo cifrato
 
-        String testoCifrato = ByteToString(testoCifratoByte); // Si converte il testo cifrato in una stringa in moda che l'utente la possa leggere correttamente
-        this.testoCifrato = testoCifrato;
+        this.testoCifrato = ByteToString(testoCifratoByte);
 
-        System.out.println("Testo cifrato: " + testoCifrato);   // Lo stampiamo
+        //System.out.println("Testo cifrato: " + this.testoCifrato);   // Lo stampiamo
 
         testoCifratoByte = xorOperation(key, testoCifratoByte);  // Usando la stessa chiave, con l'operatore XOR, convertiamo il testo cifrato in un testo decifrato
 
         // Metodo che ci stampa il testo decifrato
-        System.out.println(stampaTestoDecifrato(testoCifratoByte));
+        System.out.println(getTestoDecifrato(testoCifratoByte));
 
-        this.testoDecifrato = stampaTestoDecifrato(testoCifratoByte);
+        this.testoDecifrato = getTestoDecifrato(testoCifratoByte);
 
 
     }
 
-    private String stampaTestoDecifrato(byte[] testoCifrato) {
+    private String getTestoDecifrato(byte[] testoCifrato) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < testoCifrato.length; i++) {
             // I caratteri che sono formato da più byte hanno il valore del primo bit assegnato a 1 quindi è possibile
