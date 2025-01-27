@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '21'
-          distribution: 'oracle'
+          distribution: 'adoptopenjdk'
       - name: Installazione Maven
         uses: actions/setup-java@v2
         with:
