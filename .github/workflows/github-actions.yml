@@ -1,4 +1,4 @@
-name: Guthub actions
+name: Github actions
 
 on:
   push:
