@@ -32,7 +32,7 @@ jobs:
           maven-version: '3.9.9'
 
       - name: Build and test con Maven
-        run: mvn clean install
+        run: mvn clean install -f Cifrario/pom.xml
         
       - name: List files in the repository
         run: |
