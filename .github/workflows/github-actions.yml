@@ -27,7 +27,7 @@ jobs:
           distribution: 'temurin'
           
       - name: Installazione Maven
-        uses: sleshch/maven-setup-action@v1
+        uses: stCarolas/setup-maven@v5
         with:
           maven-version: '3.9.9'
 
