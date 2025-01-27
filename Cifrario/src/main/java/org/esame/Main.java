@@ -9,5 +9,6 @@ public class Main {
 
         SchermataPrincipale schermataprincipale = new SchermataPrincipale();
         schermataprincipale.start();
+
     }
 }

@@ -53,6 +53,7 @@ public class SchermataPrincipale {
 
 
         cifratore.cifratura(testo);
+        cifratore.stampa();
     }
 
 }

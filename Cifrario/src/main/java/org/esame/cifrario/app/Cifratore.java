@@ -24,19 +24,17 @@ public class Cifratore {
 
 
         byte[] testoCifratoByte = xorOperation(key, testoByte);  // Esegue l'operatore XOR e lo salva in un testo cifrato
-
         this.testoCifrato = ByteToString(testoCifratoByte);
 
-        //System.out.println("Testo cifrato: " + this.testoCifrato);   // Lo stampiamo
 
         testoCifratoByte = xorOperation(key, testoCifratoByte);  // Usando la stessa chiave, con l'operatore XOR, convertiamo il testo cifrato in un testo decifrato
-
-        // Metodo che ci stampa il testo decifrato
-        System.out.println(getTestoDecifrato(testoCifratoByte));
-
         this.testoDecifrato = getTestoDecifrato(testoCifratoByte);
 
 
+    }
+    public void stampa(){
+        System.out.println("Testo cifrato: " + testoCifrato);
+        System.out.println("Testo decifrato: " + testoDecifrato);
     }
 
     private String getTestoDecifrato(byte[] testoCifrato) {
@@ -65,7 +63,7 @@ public class Cifratore {
                 stringBuilder.append((char) testoCifrato[i]);
             }
         }
-        return "Testo decifrato: " + stringBuilder;
+        return stringBuilder.toString();
     }
 
 
@@ -77,7 +75,7 @@ public class Cifratore {
         return key;
     }
 
-    private byte[] xorOperation(byte[] key, byte[] testo){
+    public byte[] xorOperation(byte[] key, byte[] testo){
 
         //Controllo per vedere se hanno dimensione uguale
 
