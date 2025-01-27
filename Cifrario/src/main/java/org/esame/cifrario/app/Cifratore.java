@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 
 public class Cifratore {
-
+    private static final SecureRandom secureRandom = new SecureRandom();
     String testoCifrato;
     String testoDecifrato;
 
@@ -68,7 +68,7 @@ public class Cifratore {
 
 
     private byte[] generateKey(int size){
-        SecureRandom secureRandom = new SecureRandom();
+
 
         byte[] key = new byte[size];
         secureRandom.nextBytes(key);

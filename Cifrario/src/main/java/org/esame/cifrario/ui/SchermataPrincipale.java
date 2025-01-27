@@ -2,12 +2,13 @@ package org.esame.cifrario.ui;
 
 import org.esame.cifrario.app.Cifratore;
 
+import java.nio.charset.StandardCharsets;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
 public class SchermataPrincipale {
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
     Cifratore cifratore = new Cifratore();
     public void start(){
 
