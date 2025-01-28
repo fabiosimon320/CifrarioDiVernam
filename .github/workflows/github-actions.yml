@@ -28,13 +28,13 @@ jobs:
           cd ..
           docker build -t Cifrario .
 
-
       - name: Run immagine docker
         run: |
           cd ..
-	  docker run -it --name Cifrario-Container Cifrario
+          docker run -it --name Cifrario-Container Cifrario
 
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      
       - run: echo "🍏 This job's status is ${{ job.status }}."
