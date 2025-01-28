@@ -1,9 +1,12 @@
-version: '3.9'
+
 
 services:
   cifrario:
-    image: cifrario  
-    container_name: cifrario-container
-    ports:
-      - "8080:8080"  
-    restart: always
+    build:  
+      context: .  
+      dockerfile: Dockerfile
+    container_name: cifrario-container 
+    volumes:
+      - ./Cifrario:/app/Cifrario  
+    working_dir: /app  
+    command: java -jar /app/Cifrario/target/Cifrario-1.0-SNAPSHOT.jar

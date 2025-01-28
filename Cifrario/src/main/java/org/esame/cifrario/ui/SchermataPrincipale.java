@@ -12,6 +12,8 @@ public class SchermataPrincipale {
     Cifratore cifratore = new Cifratore();
     public void start(){
 
+
+
      int choice = 0;
 
      do {
