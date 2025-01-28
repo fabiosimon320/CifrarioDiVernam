@@ -27,10 +27,11 @@ jobs:
         uses: hoverkraft-tech/compose-action@v2.1.0
         with:
           compose-file: "docker-compose.yml"
-        
+
       - name: Build immagine docker
-        run:
-          docker-compose run
+        run: 
+	  docker build -t cifrario .
+        
 
       - name: Run immagine docker
         run:
