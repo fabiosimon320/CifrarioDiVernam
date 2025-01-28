@@ -23,4 +23,4 @@ ENV MAVEN_CONFIG="$USER_HOME_DIR/.m2"
 WORKDIR /app
 COPY Cifrario/ /app/Cifrario/
 
-RUN mvn -f /app/Cifrario/pom.xml clean install
+RUN mvn -f /app/Cifrario/pom.xml clean install -DoutputDirectory=/app/Cifrario/target

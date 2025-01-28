@@ -1,4 +1,4 @@
-name: Github actions
+java -jarname: Github actions
 
 on:
   push:
