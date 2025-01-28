@@ -25,11 +25,11 @@ jobs:
         
       - name: Build immagine docker
         run:
-          docker build -t cifrario .
+          docker-compose build
 
       - name: Run immagine docker
         run:
-          docker run --name cifrario-container cifrario
+          docker-compose up
 
       - name: List files in the repository
         run: |
