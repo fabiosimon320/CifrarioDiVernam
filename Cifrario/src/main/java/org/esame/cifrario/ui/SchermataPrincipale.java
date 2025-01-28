@@ -10,16 +10,17 @@ import java.util.Scanner;
 public class SchermataPrincipale {
     Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
     Cifratore cifratore = new Cifratore();
+    int choice;
     public void start(){
 
 
 
-     int choice = 0;
+      this.choice = 1;
 
      do {
          stampascelte();
          try {
-             choice = 1;
+
              switch (choice){
                  case 1:
                      testoDaCifrare();
@@ -56,6 +57,8 @@ public class SchermataPrincipale {
 
         cifratore.cifratura(testo);
         cifratore.stampa();
+        this.choice = 1;
+
     }
 
 }
