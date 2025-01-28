@@ -8,7 +8,7 @@ public class CifrarioTest {
 
 
 
-        String stringaTest = "Esecuzione del test";
+        String stringaTest = "£££Esecuzione del test£££";
 
         cifratore.cifratura(stringaTest);
         assertNotEquals(cifratore.getTestoCifrato(), stringaTest);
