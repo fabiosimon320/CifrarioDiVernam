@@ -57,7 +57,7 @@ public class SchermataPrincipale {
 
         cifratore.cifratura(testo);
         cifratore.stampa();
-        this.choice = 1;
+        this.choice = 2;
 
     }
 
