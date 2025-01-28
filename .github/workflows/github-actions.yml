@@ -24,13 +24,11 @@ jobs:
         uses: docker/setup-buildx-action@v3
         
       - name: Build immagine docker
-        run: |
-          cd ..
+        run:
           docker build -t cifrario .
 
       - name: Run immagine docker
-        run: |
-          cd ..
+        run:
           docker run -it --name cifrario-container cifrario
 
       - name: List files in the repository
