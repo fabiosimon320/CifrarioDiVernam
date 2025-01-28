@@ -19,8 +19,7 @@ public class SchermataPrincipale {
      do {
          stampascelte();
          try {
-             choice = scanner.nextInt();
-             scanner.nextLine();
+             choice = 1;
              switch (choice){
                  case 1:
                      testoDaCifrare();
@@ -52,7 +51,7 @@ public class SchermataPrincipale {
     public void testoDaCifrare() {
         System.out.println("Inserisci il testo che vuoi cifrare:");
 
-        String testo = scanner.nextLine();
+        String testo = "Stringa di prova per evitare input££££";
 
 
         cifratore.cifratura(testo);
