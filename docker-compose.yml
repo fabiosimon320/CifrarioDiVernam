@@ -9,4 +9,4 @@ services:
     volumes:
       - ./Cifrario:/app/Cifrario  
     working_dir: /app  
-    command: java -jar /root/.m2/repository/org/esame/Cifrario/1.0-SNAPSHOT/Cifrario-1.0-SNAPSHOT.jar.jar
+    command: java -jar /root/.m2/repository/org/esame/Cifrario/1.0-SNAPSHOT/Cifrario-1.0-SNAPSHOT.jar
