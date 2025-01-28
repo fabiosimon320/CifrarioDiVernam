@@ -24,5 +24,3 @@ WORKDIR /app
 COPY Cifrario/ /app/Cifrario/
 
 RUN mvn -f /app/Cifrario/pom.xml clean install
-
-CMD ["java", "-jar", "/app/Cifrario/target/Cifrario-1.0-SNAPSHOT.jar"]
