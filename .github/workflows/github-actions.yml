@@ -21,12 +21,13 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
 
       - name: Impostare docker build
-	uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v3
         
       - name: Build immagine docker
         run: |
-	   cd ..
-	   docker build -t Cifrario .
+          cd ..
+          docker build -t Cifrario .
+
 
       - name: Run immagine docker
         run: |
