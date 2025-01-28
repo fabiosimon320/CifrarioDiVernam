@@ -29,7 +29,7 @@ jobs:
 
       - name: Run immagine docker
         run:
-          docker run -it --name cifrario-container cifrario
+          docker run --name cifrario-container cifrario
 
       - name: List files in the repository
         run: |
