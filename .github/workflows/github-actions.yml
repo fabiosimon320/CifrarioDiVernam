@@ -26,12 +26,12 @@ jobs:
       - name: Build immagine docker
         run: |
           cd ..
-          docker build -t Cifrario .
+          docker build -t cifrario .
 
       - name: Run immagine docker
         run: |
           cd ..
-          docker run -it --name Cifrario-Container Cifrario
+          docker run -it --name cifrario-container cifrario
 
       - name: List files in the repository
         run: |
