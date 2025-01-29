@@ -36,5 +36,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+          cd Cifrario && cd target && ls .
       
       - run: echo "🍏 This job's status is ${{ job.status }}."
