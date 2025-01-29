@@ -36,6 +36,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          cd /home/runner/work/CifrarioDiVernam/CifrarioDiVernam/Cifrario && ls .
+          ls /home/runner/work/CifrarioDiVernam/CifrarioDiVernam/Cifrario
       
       - run: echo "🍏 This job's status is ${{ job.status }}."
