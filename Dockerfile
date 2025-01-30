@@ -16,10 +16,6 @@ COPY --from=maven:3.9.9-eclipse-temurin-17 /usr/share/maven/ref/settings-docker.
 
 RUN ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn
 
-ARG MAVEN_VERSION=3.9.9
-ARG USER_HOME_DIR="/root"
-ENV MAVEN_CONFIG="$USER_HOME_DIR/.m2"
-
 WORKDIR /app
 COPY Cifrario/ /app/Cifrario/
 
